@@ -114,10 +114,12 @@
 
 - (void) viewWillAppear: (BOOL) animated
 {
-	if ( (_clearsSelectionOnViewWillAppear) && ([self.gridView indexOfSelectedItem] != NSNotFound) )
+
+	if ( (_clearsSelectionOnViewWillAppear))
 	{
-		[self.gridView deselectItemAtIndex: [self.gridView indexOfSelectedItem] animated: NO];
+        [self.gridView clearAllSelectedItems];
 	}
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
